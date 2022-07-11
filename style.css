@@ -1,0 +1,23 @@
+body {
+    font-family: sans-serif;
+}
+
+#myChart {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    margin: 10px;
+}

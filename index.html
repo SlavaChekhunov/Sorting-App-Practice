@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <script src="chart.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sorting App</h1>
+
+    <canvas id="myChart" width="400" height="300"></canvas>
+
+    <script>
+        let ctx = document.getElementById("myChart").getContext("2d");
+        let myChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: ['Element 1', 'Element 2', 'Element 3','Element 4', 'Element 5',
+                        'Element 6', 'Element 7', 'Element 8','Element 9', 'Element 10',
+                        'Element 11', 'Element 12', 'Element 13','Element 14', 'Element 15',
+                        'Element 16', 'Element 17', 'Element 18','Element 19', 'Element 20',
+                        'Element 21', 'Element 22', 'Element 23','Element 24', 'Element 25',
+                        'Element 26', 'Element 27', 'Element 28','Element 29', 'Element 30',
+                        'Element 31', 'Element 32', 'Element 33','Element 34', 'Element 35',
+                        'Element 36', 'Element 37', 'Element 38','Element 39', 'Element 40',],
+                datasets: [{
+                    data: array,
+                    backgroundColor: "rgba(15, 10, 222, 0.5)", 
+                    borderWidth: 2,
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+        function sortArray() {
+            myChart.data.datasets[0].data = sortedArray;
+            myChart.update();
+        }
+
+
+        function selectionSortArray() {
+            myChart.data.datasets[0].data = sortedArray;
+            myChart.update();
+        }
+
+        function insertionSortArray() {
+            myChart.data.datasets[0].data = sortedArray;
+            myChart.update();
+        }
+
+        function resetArray() {
+            generateArray();
+            bubbleSort(array);
+            myChart.data.datasets[0].data = array;
+            myChart.update();
+        }
+
+    </script>
+    <div class="container">
+        <input class='btn' type="button" value="Bubble Sort" onClick="sortArray()">
+        <input class='btn' type="button" value="Insertion Sort" onClick="insertionSortArray()">
+        <input class='btn' type="button" value="Selection Sort" onClick="selectionSortArray()">
+        <input class='btn' type="button" value="Reset Array" onClick="resetArray()">
+    </div>
+</body>
+</html>
